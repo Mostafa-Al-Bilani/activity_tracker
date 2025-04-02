@@ -1,11 +1,11 @@
 import React from "react";
-import "./ChartComponent.css";
+import "./Chart.css";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement } from "chart.js";
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
-const ChartComponent = ({ data, label }) => {
+const Chart = ({ data, label }) => {
   const chartData = {
     labels: data.map((d) => d.date),
     datasets: [
@@ -25,4 +25,4 @@ const ChartComponent = ({ data, label }) => {
   );
 };
 
-export default ChartComponent;
+export default Chart;

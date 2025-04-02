@@ -1,8 +1,8 @@
 import React from "react";
 import "./Dashboard.css";
 import { useSelector } from "react-redux";
-import StatCard from "../components/StatCard";
-import ChartComponent from "../components/ChartComponent";
+import StatCard from "../../components/StatCard/StatCard";
+import Chart from "../../components/ChartComponent/Chart";
 
 const Dashboard = () => {
   const stats = useSelector((state) => state.activity.stats);
@@ -19,7 +19,7 @@ const Dashboard = () => {
           value={stats.totalActiveMinutes}
         />
       </div>
-      <ChartComponent data={chartData} label="Steps Over Time" />
+      <Chart data={chartData} label="Steps Over Time" />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import "./DataTable.css";
 import { useSelector, useDispatch } from "react-redux";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 const DataTable = () => {
   const dispatch = useDispatch();
