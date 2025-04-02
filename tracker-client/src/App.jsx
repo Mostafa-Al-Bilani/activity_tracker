@@ -14,7 +14,10 @@ const Dashboard = () => {
       <div className="stats-container">
         <StatCard title="Total Steps" value={stats.totalSteps} />
         <StatCard title="Total Distance" value={`${stats.totalDistance} km`} />
-        <StatCard title="Total Active Minutes" value={stats.totalActiveMinutes} />
+        <StatCard
+          title="Total Active Minutes"
+          value={stats.totalActiveMinutes}
+        />
       </div>
       <ChartComponent data={chartData} label="Steps Over Time" />
     </div>

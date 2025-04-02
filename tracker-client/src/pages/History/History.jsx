@@ -11,7 +11,8 @@ const History = () => {
       <ul className="history-list">
         {historyData.map((entry, index) => (
           <li key={index} className="history-item">
-            {entry.date} - {entry.steps} steps, {entry.distance} km, {entry.activeMinutes} min
+            {entry.date} - {entry.steps} steps, {entry.distance} km,{" "}
+            {entry.activeMinutes} min
           </li>
         ))}
       </ul>
