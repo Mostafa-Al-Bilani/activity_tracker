@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import "./Dashboard.css";
+import { useSelector } from "react-redux";
+import StatCard from "../components/StatCard";
+import ChartComponent from "../components/ChartComponent";
 
-function App() {
-  const [count, setCount] = useState(0)
+const Dashboard = () => {
+  const stats = useSelector((state) => state.activity.stats);
+  const chartData = useSelector((state) => state.activity.chartData);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="dashboard">
+      <h2 className="dashboard-title">Dashboard</h2>
+      <div className="stats-container">
+        <StatCard title="Total Steps" value={stats.totalSteps} />
+        <StatCard title="Total Distance" value={`${stats.totalDistance} km`} />
+        <StatCard title="Total Active Minutes" value={stats.totalActiveMinutes} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <ChartComponent data={chartData} label="Steps Over Time" />
+    </div>
+  );
+};
 
-export default App
+export default Dashboard;
